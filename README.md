@@ -1,2 +1,2 @@
 # swordess-toy-kotlin
-Practices when learn Koting language.
+Practices when learn Kotlin language.
