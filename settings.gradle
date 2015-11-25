@@ -1,0 +1,3 @@
+rootProject.name = 'swordess-toy-kotlin'
+
+include 'demo-servlet'

@@ -1,0 +1,41 @@
+
+group 'org.swordess.toy'
+
+buildscript {
+    ext.kotlin_version = '1.0.0-beta-2423'
+    ext.nebula_extra_config_version = '3.0.3'
+
+    ext.spring_version = '4.2.3.RELEASE'
+    ext.javaee_version = '7.0'
+
+    ext.junit_version = '4.12'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.netflix.nebula:gradle-extra-configurations-plugin:$nebula_extra_config_version"
+    }
+}
+
+allprojects {
+    version '1.0-SNAPSHOT'
+}
+
+subprojects {
+    group 'org.swordess.toy.kotlin'
+
+    apply plugin: 'kotlin'
+    apply plugin: 'nebula.provided-base'
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+        testCompile "junit:junit:$junit_version"
+    }
+}
