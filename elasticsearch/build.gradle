@@ -1,0 +1,4 @@
+
+dependencies {
+    compile "org.elasticsearch:elasticsearch:$elasticsearch_version"
+}

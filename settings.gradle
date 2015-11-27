@@ -2,3 +2,4 @@ rootProject.name = 'swordess-toy-kotlin'
 
 include 'demo-servlet'
 include 'jackson'
+include 'elasticsearch'
