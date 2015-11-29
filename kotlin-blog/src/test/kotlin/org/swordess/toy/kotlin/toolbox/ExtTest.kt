@@ -3,7 +3,9 @@ package org.swordess.toy.kotlin.toolbox
 import org.junit.Assert
 import org.junit.Test
 import org.swordess.toy.kotlin.blog.toolbox.Statistics
+import org.swordess.toy.kotlin.blog.toolbox.User
 import org.swordess.toy.kotlin.blog.toolbox.plus
+import org.swordess.toy.kotlin.blog.toolbox.withUser
 import java.util.ArrayList
 
 class ExtTest {
@@ -79,6 +81,13 @@ class ExtTest {
         // If a function with only one parameter is expected, the parameter
         // declaration may be omitted, and the default name 'it' will be used.
         // i.e., "filter { it.foo() }" is the same as "filter { it => it.foo() }"
+    }
+
+    @Test
+    fun testExtensionLambda() {
+        withUser(User("Vic", "Lau")) {
+            println("This is the first time I($firstName) play with the app.")
+        }
     }
 
 }
