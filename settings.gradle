@@ -5,4 +5,4 @@ include 'elasticsearch'
 include 'jackson'
 include 'kotlin-blog'
 include 'misc'
-include 'wasabi'omesom
+include 'wasabi'
