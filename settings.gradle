@@ -1,7 +1,8 @@
 rootProject.name = 'swordess-toy-kotlin'
 
 include 'demo-servlet'
-include 'jackson'
 include 'elasticsearch'
+include 'jackson'
 include 'kotlin-blog'
 include 'misc'
+include 'wasabi'omesom
