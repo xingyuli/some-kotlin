@@ -10,15 +10,22 @@ buildscript {
     ext.jackson_version = '2.5.4'
     ext.elasticsearch_version = '2.0.0'
 
+    ext.jooq_version = '3.7.1'
+    ext.mysql_connector_version = '5.1.35'
+
     ext.junit_version = '4.12'
 
     repositories {
+        mavenLocal()
         jcenter()
     }
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.netflix.nebula:gradle-extra-configurations-plugin:$nebula_extra_config_version"
+
+        classpath "org.jooq:jooq-codegen:$jooq_version"
+        classpath "mysql:mysql-connector-java:$mysql_connector_version"
     }
 }
 
