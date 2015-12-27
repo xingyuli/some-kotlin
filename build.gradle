@@ -21,6 +21,9 @@ buildscript {
     ext.jooq_version = '3.7.1'
     ext.mysql_connector_version = '5.1.35'
 
+    // snakeyaml module
+    ext.snakeyaml_version = '1.16'
+
     repositories {
         mavenLocal()
         jcenter()
