@@ -12,12 +12,12 @@ class Account {
 
         var _value: Date? = null
 
-        fun getValue(thisRef: Account, prop: KProperty<*>): Date? {
+        operator fun getValue(thisRef: Account, prop: KProperty<*>): Date? {
             println("get has been called")
             return _value
         }
 
-        fun setValue(thisRef: Account, prop: KProperty<*>, value: Date?) {
+        operator  fun setValue(thisRef: Account, prop: KProperty<*>, value: Date?) {
             println("set has been called")
             _value = value;
         }

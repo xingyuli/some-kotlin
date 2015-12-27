@@ -11,7 +11,7 @@ private val customers = listOf(
 )
 
 val getCustomers = routeHandler {
-    response.send(customers)
+//    response.send(customers)
 }
 
 /*

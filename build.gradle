@@ -2,18 +2,24 @@
 group 'org.swordess.toy'
 
 buildscript {
-    ext.kotlin_version = '1.0.0-beta-3594'
+    ext.kotlin_version = '1.0.0-beta-4584'
     ext.nebula_extra_config_version = '3.0.3'
 
     ext.spring_version = '4.2.3.RELEASE'
+    ext.junit_version = '4.12'
+
+    // demo-servlet module
     ext.javaee_version = '7.0'
-    ext.jackson_version = '2.5.4'
+
+    // elasticsearch module
     ext.elasticsearch_version = '2.0.0'
 
+    // jackson module
+    ext.jackson_version = '2.5.4'
+
+    // jOOQ module
     ext.jooq_version = '3.7.1'
     ext.mysql_connector_version = '5.1.35'
-
-    ext.junit_version = '4.12'
 
     repositories {
         mavenLocal()
