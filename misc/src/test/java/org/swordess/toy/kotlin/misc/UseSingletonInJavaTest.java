@@ -19,4 +19,15 @@ public class UseSingletonInJavaTest {
         Assert.assertSame(first, second);
     }
 
+    @Test
+    public void testShorthandSingleton() {
+        // only access INSTANCE triggers the initialization
+        System.out.println(ShorthandSingleton.class);
+        System.out.println(ShorthandSingleton.INSTANCE); // print: do some preparation here
+
+        ShorthandSingleton first = ShorthandSingleton.INSTANCE;
+        ShorthandSingleton second = ShorthandSingleton.INSTANCE;
+        Assert.assertSame(first, second);
+    }
+
 }

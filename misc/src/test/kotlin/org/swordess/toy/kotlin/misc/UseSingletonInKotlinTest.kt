@@ -19,4 +19,15 @@ class UseSingletonInKotlinTest {
         Assert.assertSame(first, second)
     }
 
+    @Test
+    fun testShorthandSingleton() {
+        // only access INSTANCE triggers the initialization
+        println(ShorthandSingleton::class)
+        println(ShorthandSingleton) // print: do some preparation here
+
+        val first = ShorthandSingleton
+        val second = ShorthandSingleton
+        Assert.assertSame(first, second)
+    }
+
 }

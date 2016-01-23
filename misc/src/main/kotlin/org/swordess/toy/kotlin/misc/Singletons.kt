@@ -25,3 +25,9 @@ class StandardSingleton private constructor() {
     }
 
 }
+
+object ShorthandSingleton {
+    init {
+        println("do some preparation here")
+    }
+}
