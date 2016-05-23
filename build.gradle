@@ -2,7 +2,7 @@
 group 'org.swordess.toy'
 
 buildscript {
-    ext.kotlin_version = '1.0.0-beta-4589'
+    ext.kotlin_version = '1.0.2'
     ext.nebula_extra_config_version = '3.0.3'
 
     ext.spring_version = '4.2.3.RELEASE'
