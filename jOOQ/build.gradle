@@ -1,3 +1,7 @@
+import groovy.xml.MarkupBuilder
+import org.jooq.util.GenerationTool
+
+import javax.xml.bind.JAXB
 
 dependencies {
     compile "org.jooq:jooq:$jooq_version"
@@ -5,37 +9,39 @@ dependencies {
     runtime "mysql:mysql-connector-java:$mysql_connector_version"
 }
 
-task jooqCodegen << {
-    // Use your favourite XML builder to construct the code generation configuration file
-    // ----------------------------------------------------------------------------------
-    def writer = new StringWriter()
-    def xml = new groovy.xml.MarkupBuilder(writer)
-            .configuration('xmlns': 'http://www.jooq.org/xsd/jooq-codegen-3.7.0.xsd') {
-        jdbc() {
-            driver('com.mysql.jdbc.Driver')
-            url('jdbc:mysql://localhost:3306/ds_talents?useUnicode=true&characterEncoding=utf-8')
-            user('root')
-            password('root')
+task jooqCodegen {
+    doLast {
+        // Use your favourite XML builder to construct the code generation configuration file
+        // ----------------------------------------------------------------------------------
+        def writer = new StringWriter()
+        def xml = new MarkupBuilder(writer)
+                .configuration('xmlns': 'http://www.jooq.org/xsd/jooq-codegen-3.7.0.xsd') {
+            jdbc() {
+                driver('com.mysql.jdbc.Driver')
+                url('jdbc:mysql://localhost:3306/ds_talents?useUnicode=true&characterEncoding=utf-8')
+                user('root')
+                password('root')
+            }
+            generator() {
+                database() {
+                    inputSchema('ds_talents')
+                }
+                generate() {
+                    daos("true")
+                }
+                target() {
+                    packageName('org.swordess.toy.kotlin.jooq.db')
+                    directory('src/gen/java')
+                }
+            }
         }
-        generator() {
-            database() {
-                inputSchema('ds_talents')
-            }
-            generate() {
-                daos("true")
-            }
-            target() {
-                packageName('org.swordess.toy.kotlin.jooq.db')
-                directory('src/gen/java')
-            }
-        }
-    }
 
-    // Run the code generator
-    // ----------------------
-    org.jooq.util.GenerationTool.generate(
-            javax.xml.bind.JAXB.unmarshal(new StringReader(writer.toString()), org.jooq.util.jaxb.Configuration.class)
-    )
+        // Run the code generator
+        // ----------------------
+        GenerationTool.generate(
+                JAXB.unmarshal(new StringReader(writer.toString()), org.jooq.util.jaxb.Configuration.class)
+        )
+    }
 }
 
 sourceSets {

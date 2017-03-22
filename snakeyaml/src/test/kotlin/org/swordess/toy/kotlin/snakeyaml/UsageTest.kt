@@ -15,6 +15,7 @@ class UsageTest {
     @Test
     fun testLoadFromString() {
         val document = "hello: 25"
+        @Suppress("UNCHECKED_CAST")
         val map = Yaml().load(document) as Map<String, *>
         assertEquals("{hello=25}", map.toString())
         assertEquals(25 as Int?, map["hello"])
@@ -41,6 +42,7 @@ float: 3.14159
 list: [LITE, RES_ACID, SUS_DEXT]
 map: {hp: 13, sp: 5}
 """
+        @Suppress("UNCHECKED_CAST")
         val map = Yaml().load(document) as Map<String, *>
         for ((k, v) in map) {
             println("$k=$v")
