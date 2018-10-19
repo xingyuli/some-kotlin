@@ -1,8 +1,0 @@
-
-repositories {
-    maven { url 'http://repository.jetbrains.com/all' }
-}
-
-dependencies {
-    compile 'org.wasabi:wasabi:0.1-SNAPSHOT'
-}
