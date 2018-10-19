@@ -11,14 +11,14 @@ import java.net.InetAddress
 
 class IndexRepository(val config: ClientConfig) {
 
-    private lateinit var client: Client
+    private var client: Client
 
     init {
         println("using config: $config")
 
         val settings = Settings.settingsBuilder().put("cluster.name", config.clusterName).build()
         client = TransportClient.builder().settings(settings).build()
-                .addTransportAddress(InetSocketTransportAddress(InetAddress.getByName(config.host), config.port))
+            .addTransportAddress(InetSocketTransportAddress(InetAddress.getByName(config.host), config.port))
 
         val indicesExistsResponse = client.admin().indices().prepareExists(config.indexName).execute().actionGet()
         if (!indicesExistsResponse.isExists) {
@@ -26,9 +26,9 @@ class IndexRepository(val config: ClientConfig) {
         }
 
         client.admin().indices().preparePutMapping(config.indexName)
-                .setType("CompanyDocument")
-                .setSource(MAPPING_SETTING)
-                .execute().actionGet()
+            .setType("CompanyDocument")
+            .setSource(MAPPING_SETTING)
+            .execute().actionGet()
 
         println("mapping setting updated")
     }
@@ -50,16 +50,16 @@ class IndexRepository(val config: ClientConfig) {
     companion object {
 
         val MAPPING_SETTING: XContentBuilder = XContentFactory.jsonBuilder().prettyPrint()
-                .startObject()
-                    .startObject("CompanyDocument")
-                        .startObject("properties")
-                            .startObject("level")
-                                .field("type", "string")
-                                .field("index", "not_analyzed")
-                            .endObject()
+            .startObject()
+                .startObject("CompanyDocument")
+                    .startObject("properties")
+                        .startObject("level")
+                            .field("type", "string")
+                            .field("index", "not_analyzed")
                         .endObject()
                     .endObject()
                 .endObject()
+            .endObject()
 
     }
 

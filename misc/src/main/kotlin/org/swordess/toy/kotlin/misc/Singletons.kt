@@ -20,7 +20,8 @@ class StandardSingleton private constructor() {
             StandardSingleton()
         }
 
-        @JvmStatic fun getInstance() = instance_
+        @JvmStatic
+        fun getInstance() = instance_
 
     }
 

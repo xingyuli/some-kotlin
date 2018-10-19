@@ -145,10 +145,10 @@ wheels:
     @Test
     fun testDump() {
         val data = mapOf(
-                "name" to "Silenthand Olleander",
-                "race" to "Human",
-                "traits" to arrayOf("ONE_HAND", "ONE_EYE")
-        );
+            "name" to "Silenthand Olleander",
+            "race" to "Human",
+            "traits" to arrayOf("ONE_HAND", "ONE_EYE")
+        )
         val output = Yaml().dump(data)
         /*
          * Produces:

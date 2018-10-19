@@ -10,16 +10,16 @@ class Account {
 
     class DateDelegate {
 
-        var _value: Date? = null
+        var value: Date? = null
 
         operator fun getValue(thisRef: Account, prop: KProperty<*>): Date? {
             println("get has been called")
-            return _value
+            return value
         }
 
-        operator  fun setValue(thisRef: Account, prop: KProperty<*>, value: Date?) {
+        operator fun setValue(thisRef: Account, prop: KProperty<*>, value: Date?) {
             println("set has been called")
-            _value = value;
+            this.value = value
         }
 
     }

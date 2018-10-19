@@ -19,11 +19,13 @@ class SnakeCaseTest {
 
     @Test
     fun testDeserialization() {
-        val project = mapper.readValue("""{
+        val project = mapper.readValue(
+            """{
 "first_name": "Vic",
 "last_name": "Lau",
 "gender": "Male"
-}""", Project::class.java)
+}""", Project::class.java
+        )
         Assert.assertEquals(project.firstName, "Vic")
         Assert.assertEquals(project.lastName, "Lau")
         Assert.assertEquals(project.gender, "Male")

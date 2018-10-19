@@ -1,7 +1,7 @@
 package org.swordess.toy.kotlin.blog.toolbox
 
 operator fun Statistics.plus(other: Statistics): Statistics =
-        Statistics(this.failedNum + other.failedNum, this.succeededNum + other.succeededNum)
+    Statistics(this.failedNum + other.failedNum, this.succeededNum + other.succeededNum)
 
 
 data class User(val firstName: String, val lastName: String)

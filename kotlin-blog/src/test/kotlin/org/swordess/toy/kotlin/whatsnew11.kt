@@ -9,15 +9,14 @@ import kotlin.NoSuchElementException
 typealias OscarWinners = Map<String, String>
 
 fun countLaLaLand(oscarWinners: OscarWinners) =
-        oscarWinners.count { it.value.contains("La La Land") }
+    oscarWinners.count { it.value.contains("La La Land") }
 
 // Note that the type names (initial and the type alias) are interchangeable
 fun checkLaLaLandIsTheBestMovie(oscarWinners: Map<String, String>) =
-        oscarWinners["Best Movie"] == "La La Land"
+    oscarWinners["Best Movie"] == "La La Land"
 
 fun votesForLaLaLand(votes: List<Map<String, String>>) =
-        votes.map(::countLaLaLand).sum()
-
+    votes.map(::countLaLaLand).sum()
 
 
 /****************************/
@@ -32,13 +31,11 @@ class Vehicle(val brand: String, val no: String) {
 fun decorateName(nameProvider: () -> String): String = "[ ${nameProvider.invoke()} ]"
 
 
-
 /*************************/
 /* Destructing in lambda */
 /*************************/
 
 data class Stub(val seq: Int, val desc: String)
-
 
 
 /*****************************/
@@ -62,7 +59,6 @@ class TryInlinePropertyAccessor(var kind: String) {
 }
 
 
-
 /******************************/
 /* Local delegated properties */
 /******************************/
@@ -81,7 +77,6 @@ fun demoLocalDelegatedProperties(needAnswer: () -> Boolean) {
 }
 
 
-
 /* Generic enum value access */
 
 enum class RGB { RED, GREEN, BLUE }
@@ -93,23 +88,30 @@ inline fun <reified T : Enum<T>> printAllValue() {
 
 
 fun main(args: Array<String>) {
-    println(votesForLaLaLand(listOf(
-            mapOf(
+    println(
+        votesForLaLaLand(
+            listOf(
+                mapOf(
                     "Jame" to "La La Land",
                     "Bruno" to "sth. else1",
-                    "Mars" to "sth. else2"),
-            mapOf(
+                    "Mars" to "sth. else2"
+                ),
+                mapOf(
                     "Penny" to "sth. else3",
-                    "Amen" to "La La Land"),
-            mapOf(
+                    "Amen" to "La La Land"
+                ),
+                mapOf(
                     "Penny" to "sth. else4",
-                    "Bruno" to "sth. else2")
-    )))
+                    "Bruno" to "sth. else2"
+                )
+            )
+        )
+    )
 
     val vehicle = Vehicle(brand = "Peking Jeep", no = "123456")
     println("decorated name is: ${decorateName(vehicle::displayName)}")
 
-    val map = mapOf<Int, String>(1 to "one", 2 to "two")
+    val map = mapOf(1 to "one", 2 to "two")
     map.forEach {
         println("k: ${it.key}, v: ${it.value}")
     }
@@ -148,10 +150,10 @@ fun main(args: Array<String>) {
     // onEach
     val arr = arrayOf("China", "Germany", "England", "Poland", "Singapore")
     println(arr
-            .filter { it.contains("e") }
-            .onEach { println("El: $it") }
-            .map { "prefix-$it" }
-            .joinToString { it })
+        .filter { it.contains("e") }
+        .onEach { println("El: $it") }
+        .map { "prefix-$it" }
+        .joinToString { it })
 
     println("Array.toString: $arr")
     println("Array.contentToString: ${arr.contentToString()}")
@@ -171,10 +173,10 @@ fun main(args: Array<String>) {
     println(emptyMap)
 
     val mapDelegate = mutableMapOf<String, Any>()
-            .withDefault { if (it == "valueDelegated") "a" to "aaa" else throw NoSuchElementException(it) }
+        .withDefault { if (it == "valueDelegated") "a" to "aaa" else throw NoSuchElementException(it) }
 //            .withDefault { if (it == "anotherValueDelegated") "b" to "bbb" else throw NoSuchElementException(it) }
-    var valueDelegated: Pair<String, String> by mapDelegate
-    var anotherValueDelegated: Pair<String, String> by mapDelegate
+    val valueDelegated: Pair<String, String> by mapDelegate
+    val anotherValueDelegated: Pair<String, String> by mapDelegate
     println(valueDelegated)
 //    println(anotherValueDelegated)
 }

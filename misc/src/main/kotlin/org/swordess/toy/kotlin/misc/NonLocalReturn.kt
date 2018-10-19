@@ -6,7 +6,7 @@ fun foo(block: () -> Unit) {
 
 inline fun bar(block: () -> Int) = block()
 
-inline fun baz(block: () -> Unit): Unit {
+inline fun baz(block: () -> Unit) {
     block()
 }
 

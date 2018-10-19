@@ -3,8 +3,8 @@ package org.swordess.toy.kotlin.misc
 import org.junit.Test
 
 class DigOutBackingField(
-        val name: String, var desc: String,
-        private val age: Int, private var level: Int
+    val name: String, var desc: String,
+    private val age: Int, private var level: Int
 ) {
     constructor(extra: String) : this("", "", 0, 0)
 }

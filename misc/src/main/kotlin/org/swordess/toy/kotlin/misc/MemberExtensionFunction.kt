@@ -9,13 +9,13 @@ class Path(val uri: String, val method: HttpMethod)
 
 class Handler(val basePath: String) {
 
-    private val routes = mutableMapOf<Path, ()->Unit>()
+    private val routes = mutableMapOf<Path, () -> Unit>()
 
-    fun get(uri: String, block: ()->Unit) {
+    fun get(uri: String, block: () -> Unit) {
         routes[Path(basePath + uri, HttpMethod.GET)] = block
     }
 
-    fun post(uri: String, block: ()->Unit) {
+    fun post(uri: String, block: () -> Unit) {
         routes[Path(basePath + uri, HttpMethod.POST)] = block
     }
 
@@ -23,7 +23,7 @@ class Handler(val basePath: String) {
 
 class HandlerWithExtension(val basePath: String) {
 
-    private val routes = mutableMapOf<Path, ()->Unit>()
+    private val routes = mutableMapOf<Path, () -> Unit>()
 
     fun String.get(block: () -> Unit) {
         routes[Path(basePath + this, HttpMethod.GET)] = block

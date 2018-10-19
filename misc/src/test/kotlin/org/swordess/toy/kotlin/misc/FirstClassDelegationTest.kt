@@ -26,7 +26,7 @@ class FirstClassDelegationTest {
         val delegated = RealMachine()
         val m = MonitoredMachine(delegated)
         assertEquals("[monitored] ${delegated.run()}", m.run())
-        assertEquals("${delegated.start()}", m.start())
+        assertEquals(delegated.start(), m.start())
     }
 
 }
