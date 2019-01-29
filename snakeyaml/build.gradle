@@ -1,4 +1,0 @@
-
-dependencies {
-    compile "org.yaml:snakeyaml:$snakeyaml_version"
-}

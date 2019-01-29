@@ -33,7 +33,7 @@
 
     <servlet>
         <servlet-name>Greeting</servlet-name>
-        <servlet-class>org.swordess.toy.kotlin.demo.servlet.app.GreetingServlet</servlet-class>
+        <servlet-class>org.swordess.somekotlin.demoservlet.app.GreetingServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Greeting</servlet-name>

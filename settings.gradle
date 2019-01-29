@@ -1,9 +1,0 @@
-rootProject.name = 'swordess-toy-kotlin'
-
-include 'demo-servlet'
-include 'elasticsearch'
-include 'jackson'
-include 'jOOQ'
-include 'kotlin-blog'
-include 'misc'
-include 'snakeyaml'

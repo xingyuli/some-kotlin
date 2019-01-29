@@ -1,7 +1,0 @@
-
-apply plugin: 'war'
-
-dependencies {
-    compile "org.springframework:spring-web:$spring_version"
-    compile "javax:javaee-api:$javaee_version"
-}

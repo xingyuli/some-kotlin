@@ -4,7 +4,7 @@
        xsi:schemaLocation="
          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="config" class="org.swordess.toy.kotlin.demo.servlet.common.Config">
+    <bean id="config" class="org.swordess.somekotlin.demoservlet.common.Config">
         <property name="host" value="localhost" />
         <property name="port" value="9300" />
     </bean>
