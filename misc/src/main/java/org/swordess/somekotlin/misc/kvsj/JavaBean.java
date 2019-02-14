@@ -1,10 +1,13 @@
 package org.swordess.somekotlin.misc.kvsj;
 
+/**
+ * @author viclau
+ */
 public class JavaBean {
 
     /* readable / writable fields */
 
-    // name: get, set
+    /** name: get, set **/
     private String name;
     public String getName() {
         return name;
@@ -14,7 +17,7 @@ public class JavaBean {
     }
 
 
-    // hasName: isHas, setHas
+    /** hasName: isHas, setHas **/
     private boolean hasName;
     public boolean isHasName() {
         return hasName;
@@ -24,7 +27,7 @@ public class JavaBean {
     }
 
 
-    // hasAge: getHas, setHas
+    /** hasAge: getHas, setHas **/
     private boolean hasAge;
     public boolean getHasAge() {
         return hasAge;
@@ -34,7 +37,7 @@ public class JavaBean {
     }
 
 
-    // isValid: isIs, setIs
+    /** isValid: isIs, setIs **/
     private boolean isValid;
     public boolean isIsValid() {
         return isValid;
@@ -44,7 +47,7 @@ public class JavaBean {
     }
 
 
-    // active: get, set
+    /** active: get, set **/
     private boolean active;
     public boolean getActive() {
         return active;
@@ -54,7 +57,7 @@ public class JavaBean {
     }
 
 
-    // used: is, set
+    /** used: is, set **/
     private boolean used;
     public boolean isUsed() {
         return used;
@@ -66,28 +69,28 @@ public class JavaBean {
 
     /* readable fields */
 
-    // age: get
+    /** age: get **/
     private int age = 90;
     public int getAge() {
         return age;
     }
 
 
-    // hasPressure: getHasPressure
+    /** hasPressure: getHasPressure **/
     private boolean hasPressure = true;
     public boolean getHasPressure() {
         return hasPressure;
     }
 
 
-    // old: is
+    /** old: is **/
     private boolean isOld = true;
     public boolean isOld() {
         return isOld;
     }
 
 
-    // fantasy: is
+    /** fantasy: is **/
     private boolean fantasy = true;
     public boolean isFantasy() {
         return fantasy;
