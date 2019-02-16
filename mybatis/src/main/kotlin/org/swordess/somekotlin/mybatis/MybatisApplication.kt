@@ -17,8 +17,15 @@ open class MybatisApplication(private val gradeDefMapper: GradeDefMapper) : Comm
 
     override fun run(vararg args: String?) {
         // println(gradeDefMapper.getById(1))
+        dynamicSql()
+
         // hardCodePagination()
-        generalPagination()
+        // generalPagination()
+    }
+
+    private fun dynamicSql() {
+        // println(gradeDefMapper.getByIds(setOf(1, 3, 5, 7)))
+        println(gradeDefMapper.getByIds2(setOf(1, 3, 5, 7)))
     }
 
     private fun hardCodePagination() {
