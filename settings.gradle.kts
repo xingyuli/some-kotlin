@@ -7,6 +7,7 @@ include(
     "jOOQ",
     "kotlin-blog",
     "snakeyaml",
+    "mybatis",
 
     "spring-cloud-sleuth",
 
