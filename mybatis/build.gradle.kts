@@ -12,6 +12,6 @@ dependencies {
 
     // mybatis
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0")
-    implementation("com.github.pagehelper:pagehelper:5.1.8")
+    implementation("com.github.pagehelper:pagehelper-spring-boot-starter:1.2.10")
     // implementation("org.mybatis.dynamic-sql:mybatis-dynamic-sql:1.1.0")
 }

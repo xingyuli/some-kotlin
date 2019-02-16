@@ -1,15 +1,12 @@
 package org.swordess.somekotlin.mybatis
 
 import com.github.pagehelper.PageHelper
-import com.github.pagehelper.PageInterceptor
 import com.github.pagehelper.PageRowBounds
 import org.apache.ibatis.session.RowBounds
 import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
 import org.swordess.somekotlin.mybatis.mapper.GradeDefMapper
 import org.swordess.somekotlin.mybatis.model.GradeDef
 
@@ -56,14 +53,6 @@ open class MybatisApplication(private val gradeDefMapper: GradeDefMapper) : Comm
         fun main(args: Array<String>) {
             SpringApplication.run(MybatisApplication::class.java, *args)
         }
-
-    }
-
-    @Configuration
-    open class MyConfig {
-
-        @Bean
-        open fun pageInterceptor(): PageInterceptor = PageInterceptor()
 
     }
 
