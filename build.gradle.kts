@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.20")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.50")
         classpath("org.jooq:jooq-codegen:3.7.1")
         classpath("mysql:mysql-connector-java:5.1.35")
     }
